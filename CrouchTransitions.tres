@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterMovementTransitions" load_steps=2 format=3 uid="uid://6ef3nx0uuafm"]
+
+[ext_resource type="Script" path="res://CharacterMovementTransitions.gd" id="1_0d4in"]
+
+[resource]
+script = ExtResource("1_0d4in")
+airborne = Object(Node,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":Resource("res://AirborneState.gd"))
+
+input = Object(Node,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":Resource("res://PlayerInput.gd"))
+
