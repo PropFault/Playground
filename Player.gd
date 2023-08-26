@@ -1,8 +1,8 @@
 extends Node3D
 @onready var layer0 = get_node("Body/Logic/Layer0")
 @onready var layer1 = get_node("Body/Logic/Layer1")
-@export var jumping_speed: float = 20.0
-@export var jump_control_duration: float = 2.0
+@export var total_jump_power: float = 45.0
+@export var jump_control_duration: float = 0.4
 var timer: float
 var is_jumping: float
 @onready var body = $Body
@@ -16,8 +16,10 @@ func _physics_process(delta):
 	
 	if body.is_grounded() and jump_pressed and timer < jump_control_duration:
 		is_jumping = true
-	if is_jumping and jump_pressed:
-		body.velocity = body.velocity + jumping_speed * body.basis.y * delta
+	if is_jumping and jump_pressed and timer < jump_control_duration:
+		var jumpImpulse = (total_jump_power * ((jump_control_duration-timer)/jump_control_duration)) * body.basis.y;
+		print(jumpImpulse)
+		body.velocity = body.velocity + jumpImpulse * delta
 	
 	if not jump_pressed or timer > jump_control_duration and not jump_pressed:
 		is_jumping = false
