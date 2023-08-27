@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2mbctni1kibe"]
+
+[ext_resource type="Texture2D" uid="uid://dhor4fuy86fwb" path="res://Assets/9patch-test.png" id="1_6vhjr"]
+[ext_resource type="Texture2D" uid="uid://di4xatorc1tca" path="res://dialogue_test.tres" id="2_yvymp"]
+[ext_resource type="Script" path="res://DialogueVPTexture.gd" id="3_7lo5r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djrp1"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_yvymp")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h476s"]
+material = SubResource("StandardMaterial3D_djrp1")
+
+[node name="dialogue_test" type="Node3D"]
+
+[node name="DialogueVP" type="SubViewport" parent="."]
+disable_3d = true
+render_target_update_mode = 4
+
+[node name="Dialogue2D" type="PanelContainer" parent="DialogueVP"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Text" type="RichTextLabel" parent="DialogueVP/Dialogue2D"]
+layout_mode = 2
+text = "Test Test LoooooL 
+"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Background" type="NinePatchRect" parent="DialogueVP/Dialogue2D"]
+z_index = -1
+layout_mode = 2
+texture = ExtResource("1_6vhjr")
+region_rect = Rect2(1.74405, 1.40563, 28.7828, 29.4585)
+patch_margin_left = 7
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Display" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_h476s")
+script = ExtResource("3_7lo5r")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.16695, 0)
