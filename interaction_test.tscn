@@ -5,8 +5,19 @@
 
 [node name="Node3D" type="Node3D"]
 
-[node name="DebugBox" parent="." instance=ExtResource("1_6sg02")]
-transform = Transform3D(26.73, 0, 0, 0, 1, 0, 0, 0, 18.86, 0, 0, 0)
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="DebugBox2" parent="CSGCombiner3D" instance=ExtResource("1_6sg02")]
+transform = Transform3D(26.73, 0, 0, 0, 20.2752, 0, 0, 0, 18.86, 0, 9, 0)
+flip_faces = true
+
+[node name="DebugBox3" parent="CSGCombiner3D" instance=ExtResource("1_6sg02")]
+transform = Transform3D(26.73, 0, 0, 0, 8.11008, 0, 0, 0, 18.86, 3, 5.7, 14)
+flip_faces = true
 
 [node name="Player" parent="." instance=ExtResource("2_crjdk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.940975, -0.319581, 0.111512, 0.114714, 0.611056, 0.783231, -0.318446, -0.724209, 0.611648, 0, 0, 0)

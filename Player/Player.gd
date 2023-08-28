@@ -3,6 +3,7 @@ extends Node3D
 @onready var layer1 = get_node("Body/Logic/Layer1")
 @export var total_jump_power: float = 45.0
 @export var jump_control_duration: float = 0.4
+
 var timer: float
 var is_jumping: float
 @onready var body = $Body

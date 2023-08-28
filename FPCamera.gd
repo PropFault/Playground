@@ -11,4 +11,4 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 func do_mouse_movement(movement):
 	body.rotate_y(-movement.x);
-	self.rotate_x(movement.y);
+	self.rotate_x(-movement.y);

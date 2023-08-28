@@ -113,15 +113,18 @@ _settings = NodePath("../../..")
 
 [node name="WalkingState" type="Node" parent="Body/Logic/Layer0/Default" node_paths=PackedStringArray("_settings")]
 script = ExtResource("2_rytqt")
+top_walking_speed = Vector4(30, 30, 30, 20)
 _settings = NodePath("../../..")
 
 [node name="RunningState" type="Node" parent="Body/Logic/Layer0/Default" node_paths=PackedStringArray("_settings")]
 script = ExtResource("3_8ejf8")
-top_walking_speed = Vector4(30, 30, 30, 10)
+top_walking_speed = Vector4(40, 40, 40, 30)
 _settings = NodePath("../../..")
 
-[node name="AirborneState" type="Node" parent="Body/Logic/Layer0/Default"]
+[node name="AirborneState" type="Node" parent="Body/Logic/Layer0/Default" node_paths=PackedStringArray("_settings")]
 script = ExtResource("4_8pg6t")
+top_walking_speed = Vector4(5, 5, 5, 5)
+_settings = NodePath("../../..")
 
 [node name="Crouch" type="Node" parent="Body/Logic/Layer0" node_paths=PackedStringArray("_settings", "active")]
 script = ExtResource("7_pkl8e")
@@ -141,8 +144,10 @@ script = ExtResource("3_8ejf8")
 top_walking_speed = Vector4(30, 30, 30, 10)
 _settings = NodePath("../../..")
 
-[node name="AirborneState" type="Node" parent="Body/Logic/Layer0/Crouch"]
+[node name="AirborneState" type="Node" parent="Body/Logic/Layer0/Crouch" node_paths=PackedStringArray("_settings")]
 script = ExtResource("4_8pg6t")
+top_walking_speed = Vector4(5, 5, 5, 5)
+_settings = NodePath("../../..")
 
 [node name="Layer1" type="Node" parent="Body/Logic"]
 script = ExtResource("11_tqhum")
