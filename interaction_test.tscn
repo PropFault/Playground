@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbx67n4djw638"]
+
+[ext_resource type="PackedScene" uid="uid://3tsd0e6ve7u1" path="res://debug_box.tscn" id="1_6sg02"]
+[ext_resource type="PackedScene" uid="uid://de1jevbkbwq81" path="res://Player/player.tscn" id="2_crjdk"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DebugBox" parent="." instance=ExtResource("1_6sg02")]
+transform = Transform3D(26.73, 0, 0, 0, 1, 0, 0, 0, 18.86, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_crjdk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
